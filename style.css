@@ -111,6 +111,3 @@ body{
 button:hover{
   cursor: pointer;
 }
-.win-screen.show {
-  display: flex;
-}
