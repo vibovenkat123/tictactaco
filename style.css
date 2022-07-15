@@ -3,7 +3,7 @@
 }
 :root{
   --cell-size: 100px;
-  --letter-size: cal(var(var(--cell-size)) * 0.8)
+  --letter-size: calc(var(--cell-size) * 0.8);
 }
 body{
   margin: 0;
@@ -25,4 +25,21 @@ body{
   width: var(--cell-size);
   background-color: rgb(231, 231, 231);
   border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cell.letter-x::before, 
+.cell.letter-x::after{
+  content: '';
+  position: absolute;
+  width: calc(var(--letter-size)*.08);
+  height: var(--letter-size);
+  background-color: black;
+}
+.cell.letter-x::before{
+  transform: rotate(40deg);
+}
+.cell.letter-x::after{
+  transform: rotate(-40deg);
 }
