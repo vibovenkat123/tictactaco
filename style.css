@@ -4,6 +4,7 @@
 :root{
   --cell-size: 100px;
   --letter-size: calc(var(--cell-size) * 0.8);
+  --background-color: rgb(231, 231, 231);
 }
 body{
   margin: 0;
@@ -23,23 +24,44 @@ body{
 .cell {
   height: var(--cell-size);
   width: var(--cell-size);
-  background-color: rgb(231, 231, 231);
+  background-color: var(--background-color);
   border-radius: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+.cell.letter-x,
+.cell.letter-o{
+  cursor: not-allowed;
 }
 .cell.letter-x::before, 
 .cell.letter-x::after{
   content: '';
   position: absolute;
-  width: calc(var(--letter-size)*.08);
+  width: calc(var(--letter-size)*.09);
   height: var(--letter-size);
   background-color: black;
 }
 .cell.letter-x::before{
-  transform: rotate(40deg);
+  transform: rotate(43deg);
 }
 .cell.letter-x::after{
-  transform: rotate(-40deg);
+  transform: rotate(-43deg);
+}
+.cell.letter-o::before, 
+.cell.letter-o::after{
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+.cell.letter-o::before{
+  width: var(--letter-size);
+  height: var(--letter-size);
+  background-color: black;
+}
+.cell.letter-o::after{
+  width: calc(var(--letter-size)*0.75);
+  height: calc(var(--letter-size)*0.75);
+  background-color: var(--background-color);
 }
