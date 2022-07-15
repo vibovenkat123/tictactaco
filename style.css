@@ -31,22 +31,30 @@ body{
   align-items: center;
   cursor: pointer;
 }
+.board.x-active .cell:not(.letter-x):not(.letter-o):hover::before,
+.board.x-active .cell:not(.letter-x):not(.letter-o):hover::after{
+  background-color: rgb(131, 131, 131) !important;
+}
 .cell.letter-x,
 .cell.letter-o{
   cursor: not-allowed;
 }
 .cell.letter-x::before, 
-.cell.letter-x::after{
+.cell.letter-x::after,
+.board.x-active .cell:not(.letter-x):not(.letter-o):hover::before,
+.board.x-active .cell:not(.letter-x):not(.letter-o):hover::after{
   content: '';
   position: absolute;
-  width: calc(var(--letter-size)*.09);
+  width: calc(var(--letter-size)*.12);
   height: var(--letter-size);
   background-color: black;
 }
-.cell.letter-x::before{
+.cell.letter-x::before,
+.board.x-active .cell:hover::before{
   transform: rotate(43deg);
 }
-.cell.letter-x::after{
+.cell.letter-x::after,
+.board.x-active .cell:hover::after{
   transform: rotate(-43deg);
 }
 .cell.letter-o::before, 
