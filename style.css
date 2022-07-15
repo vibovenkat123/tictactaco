@@ -1,8 +1,27 @@
 *, *::after, *::before{
   box-sizing: border-box;
 }
-
+:root{
+  --cell-size: 100px;
+  --letter-size: cal(var(var(--cell-size)) * 0.8)
+}
 body{
   margin: 0;
   padding:0;
+}
+.board{
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  border: 2px black solid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(3, auto);
+}
+.cell {
+  height: var(--cell-size);
+  width: var(--cell-size);
+  border: 2px black solid;
 }
