@@ -108,9 +108,9 @@ body{
   justify-content: center;
   align-items: center;
   background-color: black;
-  opacity: 0.8;
+  opacity: 0.9;
   color:white;
-  font-size: 5em;
+  font-size: 3em;
   flex-direction: column;
   gap: 50px;
 }
@@ -119,6 +119,7 @@ body{
   background-color: white;
   font-size: 0.5em;
   padding: 10px;
+  color:black;
 }
 .win-screen button:hover{
   color: white;
