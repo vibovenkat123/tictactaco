@@ -15,13 +15,14 @@ body{
   display: grid;
   justify-content: center;
   align-content: center;
-  border: 2px black solid;
   justify-items: center;
   align-items: center;
+  gap:10px;
   grid-template-columns: repeat(3, auto);
 }
 .cell {
   height: var(--cell-size);
   width: var(--cell-size);
-  border: 2px black solid;
+  background-color: rgb(231, 231, 231);
+  border-radius: 15px;
 }
