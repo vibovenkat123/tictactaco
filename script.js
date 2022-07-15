@@ -30,7 +30,7 @@ const onEnd = (isDraw) => {
   if (isDraw){
     winText.textContent = 'Its A Draw!!';
   } else{
-    winText.textContent = `${oTurn ? "O has Won!!" : "X has Won !!"}`
+    winText.textContent = `${oTurn ? "🌯 Burrito O has Won!!" : "🌮 Taco X has Won !!"}`
   }
   winText.parentElement.style.display = 'flex';
 }
