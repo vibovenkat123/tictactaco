@@ -32,8 +32,9 @@ body{
   cursor: pointer;
 }
 .board.x-active .cell:not(.letter-x):not(.letter-o):hover::before,
-.board.x-active .cell:not(.letter-x):not(.letter-o):hover::after{
-  background-color: rgb(131, 131, 131) !important;
+.board.x-active .cell:not(.letter-x):not(.letter-o):hover::after
+{
+  background-color: rgb(139, 139, 139) !important;
 }
 .cell.letter-x,
 .cell.letter-o{
@@ -58,18 +59,58 @@ body{
   transform: rotate(-43deg);
 }
 .cell.letter-o::before, 
-.cell.letter-o::after{
+.cell.letter-o::after,
+.board.o-active .cell:not(.letter-x):not(.letter-o):hover::before,
+.board.o-active .cell:not(.letter-x):not(.letter-o):hover::after{
   content: '';
   position: absolute;
   border-radius: 50%;
 }
-.cell.letter-o::before{
+.cell.letter-o::before,
+.board.o-active .cell:not(.letter-x):not(.letter-o):hover::before{
   width: var(--letter-size);
   height: var(--letter-size);
   background-color: black;
 }
-.cell.letter-o::after{
+.cell.letter-o::after,
+.board.o-active .cell:not(.letter-x):not(.letter-o):hover::after{
   width: calc(var(--letter-size)*0.75);
   height: calc(var(--letter-size)*0.75);
   background-color: var(--background-color);
+}
+.board.o-active .cell:not(.letter-x):not(.letter-o):hover::before
+{
+  background-color: rgb(139, 139, 139) !important;
+}
+.win-screen{
+  display: none;
+  position: fixed;
+  top:0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  opacity: 0.8;
+  color:white;
+  font-size: 5em;
+  flex-direction: column;
+  gap: 50px;
+}
+.win-screen button{
+  border-radius: 15px;
+  background-color: white;
+  font-size: 0.5em;
+  padding: 10px;
+}
+.win-screen button:hover{
+  color: white;
+  background-color: black;;
+}
+button:hover{
+  cursor: pointer;
+}
+.win-screen.show {
+  display: flex;
 }
